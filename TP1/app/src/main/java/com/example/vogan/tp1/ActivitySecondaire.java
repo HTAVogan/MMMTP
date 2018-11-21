@@ -16,9 +16,9 @@ public class ActivitySecondaire extends Activity {
         setContentView(R.layout.activitysecondaire);
         TextView text = findViewById(R.id.text);
         Intent i = getIntent();
-        text.setText(i.getStringExtra("Text"));
+        Personne p = i.getExtras().getParcelable("Text");
         TextView tv = findViewById(R.id.place2);
-        tv.setText(i.getStringExtra("Place"));
-
+        text.setText(p.pnom);
+        tv.setText(p.placeOfBirth);
     }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.opengl.Visibility;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.service.autofill.FillEventHistory;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -62,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 + " dans la jolie ville de " + place.getText();
         Toast.makeText(getApplicationContext(),text,Toast.LENGTH_LONG).show();
         Intent i = new Intent(getApplicationContext(),ActivitySecondaire.class);
-        i.putExtra("Text",pnom.getText().toString());
-        i.putExtra("Place",place.getText().toString());
+        Personne p = new Personne(pnom.getText().toString(),place.getText().toString());
+        i.putExtra("Text",p);
         startActivityForResult(i,0);
     }
     @Override
