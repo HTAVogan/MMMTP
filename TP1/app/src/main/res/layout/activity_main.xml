@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:id="@+id/layout">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+    <EditText
+
+        android:id="@+id/name"
+        app:layout_constraintBottom_toTopOf="@+id/secondname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        />
+    <EditText
+        android:id="@+id/secondname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:hint="Prenom"
+        />
+    <EditText
+        app:layout_constraintTop_toBottomOf="@+id/naissance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/day"
+        android:hint="DD"
+        android:maxLength="2"
+        android:nextFocusRight="@+id/month"
+        android:inputType="number"/>
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/naissance"
+        android:text="Date de naissance"
+        app:layout_constraintTop_toBottomOf="@+id/place"/>
+    <EditText
+        app:layout_constraintTop_toBottomOf="@+id/naissance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/day"
+        android:id="@+id/month"
+        android:hint="MM"
+        android:maxLength="2"
+        android:nextFocusRight="@+id/year"
+        android:inputType="number"/>
+
+    <EditText
+        app:layout_constraintTop_toBottomOf="@+id/naissance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/month"
+        android:id="@+id/year"
+        android:hint="YYYY"
+        android:maxLength="4"
+        android:nextFocusRight="@+id/place"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/place"
+        app:layout_constraintTop_toBottomOf="@id/secondname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ville de naissance"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit"
+        app:layout_constraintTop_toBottomOf="@+id/day"
+        android:hint="Tel"
+        android:inputType="phone"
+        android:visibility="invisible"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/edit"
+        android:entries="@array/departements">
+    </Spinner>
+    <Button
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Valider"
+        android:id="@+id/validey"
+        android:background="@color/colorAccent"
+        android:onClick="validey"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
