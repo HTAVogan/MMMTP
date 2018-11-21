@@ -24,8 +24,11 @@ public class Personne implements Parcelable {
             return new Personne[size];
         }
     };
-
-    private Personne(Parcel in){
+    public Personne (String pnom, String place){
+        this.pnom=pnom;
+        this.placeOfBirth=place;
+    }
+    public Personne(Parcel in){
         pnom =in.readString();
         placeOfBirth=in.readString();
     }
